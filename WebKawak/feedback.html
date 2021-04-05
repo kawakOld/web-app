@@ -1,37 +1,76 @@
 <!DOCTYPE html>
 <html lang="en"></html>
 <html>
-    
-    <head>
+  
+<!--- Index will collect 2 serpate bits data. One will be the student's E-mail 
+ The other will be the student's draft submission --> 
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.3.0/lib/p5.js"></script>
+    <script src="/Users/lvgc/Desktop/KawakCode/p5/empty-example/sketch.js"></script>
+    <meta charset="utf-8">
+    <title>KawaK</title>
+    <link href="https://releases.transloadit.com/uppy/v1.26.1/uppy.min.css" rel="stylesheet">
+      <h1>Feedback for All</h1>
+      <textarea id="draftfield">Copy Paste your Draft here or</textarea>
+      <button>Submit</button>
+ 
+
+  </head>
+  <body>
+<!-- Section which takes user input via plain HTML copy paste. to then store 
+in server via AJAX -->   
+<script src="WebKawak/sketch.js" ></script>
+
+<!-- Uppy.io JS Script which allows user to submit essay via traditonial 
+    submission styles .doc desktop dropbox etc..  -->
+    <script src="review.js"></script>
+    <div id="drag-drop-area"></div>
+
+    <script src="https://releases.transloadit.com/uppy/v1.26.1/uppy.min.js"></script>
+    <script>
+     
+      var uppy = Uppy.Core()
+        .use(Uppy.Dashboard, {
+          inline: true,
+          target: '#drag-drop-area'
+        })
+        .use(Uppy.Tus, {endpoint: 'https://tusd.tusdemo.net/files/'})
+
+      uppy.on('complete', (result) => {
+        console.log('Upload complete! We’ve uploaded these files:', result.successful)
+      })
+    </script>
 
 
-    </head>
-<body>
+    <h4> Please add your E-Mail so that we may notify you when your work is ready.</h5>
+<!--Once E-mail is submited send confirmation of their being in queue and that they 
+be notified once again when their work is ready. -->
+    <p>Temporary E-Mail addresses will not work as it will take on average 24 hours 
+      for your review to be ready
+    </p>
+      <script src="mail.js"></script>
+    <textarea id="mailfield">Your mail please ^^</textarea>
 
-<!--JS will retreive draft essay from queue to load onto user page,
-user will be able to comment / highlight sections of text before submitting 
-feedback-->
-
-
-<h1>Feedback Time! (Yay)</h1>
-<textarea>Essay will display here</textarea>
-<h4>Tips on good feedback</h4>
-    <ul>Taking 5 minutes of your day to properly read through</ul>
-    <ul>Link your comments to sections of the text</ul>
-    <ul>Try to be constructive as if it were your essay ^^</ul>
-    <ul>Be honest</ul>
-
-<h4>What to avoid</h4>
-    <ol>Criticism with no suggestions</ol>
-    <ol>Rewriting of sentences</ol>
-</body>
+    <button>Submit</button>
+    <h3>Ready to help someone else out?</h2>
+    <button>Take me away!</button>
+    <!--On button click check that input submitted in both Email box and draft
+    box -> verify nature / quality of input IF: all conditions are met take user to
+    review.html ELSE: Error, "please just submit text, no funny business ;)" or "
+    we need a valid E-mail in order for you to access your work later on" -->
 
 
+<!-- Asking user for their E-Mail so that it may be stored and called 
+to serve as a notication when the feedback is provided.-->
+  </body>
+
+<!--Post MVP implement a user creation feature so that we can ask user for
+their favorite topics and as such onl be presented with options of essays that
+they are interessted in reading. All essays will need to be labeled accordingly 
+"history, law, philosophy etc..."-->
 
 <p>Questions? Join us on Discord and let's see how we can help out</p>
 <button onclick="">Magic Discord button</button>
 
 </html>
-
-
 
