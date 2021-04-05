@@ -13,7 +13,6 @@
       <h1>Feedback for All</h1>
       <textarea id="draftfield">Copy Paste your Draft here or</textarea>
       <button>Submit</button>
-
  
 
   </head>
@@ -43,16 +42,34 @@ in server via AJAX -->
     </script>
 
 
-    <h3> Please add your E-Mail so that we may notify you when your work is ready.</h5>
+    <h4> Please add your E-Mail so that we may notify you when your work is ready.</h5>
 <!--Once E-mail is submited send confirmation of their being in queue and that they 
 be notified once again when their work is ready. -->
     <p>Temporary E-Mail addresses will not work as it will take on average 24 hours 
       for your review to be ready
     </p>
-    <script src="mail.js"></script>
+      <script src="mail.js"></script>
+    <textarea id="mailfield">Your mail please ^^</textarea>
+
     <button>Submit</button>
+    <h3>Ready to help someone else out?</h2>
+    <button>Take me away!</button>
+    <!--On button click check that input submitted in both Email box and draft
+    box -> verify nature / quality of input IF: all conditions are met take user to
+    review.html ELSE: Error, "please just submit text, no funny business ;)" or "
+    we need a valid E-mail in order for you to access your work later on" -->
+
 
 <!-- Asking user for their E-Mail so that it may be stored and called 
 to serve as a notication when the feedback is provided.-->
   </body>
+  
+<!--Post MVP implement a user creation feature so that we can ask user for
+their favorite topics and as such onl be presented with options of essays that
+they are interessted in reading. All essays will need to be labeled accordingly 
+"history, law, philosophy etc..."-->
+
+<p>Questions? Join us on Discord and let's see how we can help out</p>
+<button onclick="">Magic Discord button</button>
+
 </html>
