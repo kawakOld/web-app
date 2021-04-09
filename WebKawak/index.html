@@ -11,6 +11,9 @@
     <title>KawaK</title>
     <link href="https://releases.transloadit.com/uppy/v1.26.1/uppy.min.css" rel="stylesheet">
       <h1>Feedback for All</h1>
+      <form>
+        <input type="text" placeholder="Copy Past your draft here or">
+      </form>
       <textarea id="draftfield">Copy Paste your Draft here or</textarea>
       <button>Submit</button>
  
@@ -49,16 +52,36 @@ be notified once again when their work is ready. -->
       for your review to be ready
     </p>
       <script src="mail.js"></script>
-    <textarea id="mailfield">Your mail please ^^</textarea>
-
-    <button>Submit</button>
+    <form>
+      <input type="email" placeholder="Enter your email">
+      <input type="submit" value="Submit">
+    </form>
     <h3>Ready to help someone else out?</h2>
-    <button>Take me away!</button>
+   
+   
+
     <!--On button click check that input submitted in both Email box and draft
     box -> verify nature / quality of input IF: all conditions are met take user to
     review.html ELSE: Error, "please just submit text, no funny business ;)" or "
     we need a valid E-mail in order for you to access your work later on" -->
+    <script>
+      function draftMail () {
 
+          if(document.getElementById('draftField')) == 'hey'{
+            alert('Wow you actually made it work :D');
+          } 
+              
+          else {
+            alert('Nah try again ');
+          }   
+      }
+      var textCon = '';
+      
+
+    </script>
+
+    <input type="button" onclick="draftMail()" value="Take me away!">
+    
 
 <!-- Asking user for their E-Mail so that it may be stored and called 
 to serve as a notication when the feedback is provided.-->
